@@ -11,6 +11,14 @@ MVC 是一种将应用程序的逻辑层和表现层进行分离的方法。Thin
 控制器（C）：应用控制器（核心控制器App类）和Action控制器都承担了控制器的角色，Action控制器完成业务过程控制，而应用控制器负责调度控制。
 视图（V）：由View类和模板文件组成，模板做到了100％分离，可以独立预览和制作。
 
+### 全局函数
+S
+D
+M
+C
+I
+
+
 ### ThinkPHP如何防止SQL注入？
 如果不得已必须使用字符串查询条件，使用预处理机制；
 使用字段类型检查、自动验证和自动完成机制等避免恶意数据的输入
@@ -53,7 +61,13 @@ REWRITE模式：http://localhost/home/user/login/var/value
 
 
 ## yii
+###  Active Record
+Active Record 提供了一个面向对象的接口， 用以访问和操作数据库中的数据。Active Record 类与数据库表关联， Active Record 实例对应于该表的一行， Active Record 实例的属性表示该行中特定列的值。 您可以访问 Active Record 属性并调用 Active Record 方法来访问和操作存储在数据库表中的数据， 而不用编写原始 SQL 语句。
+更直观， 更不易出错
 
+### 源码总结
+https://segmentfault.com/a/1190000011823699
+https://segmentfault.com/a/1190000010788354
 
 ## laveral
 

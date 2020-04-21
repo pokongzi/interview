@@ -408,3 +408,31 @@ https://www.php.net/manual/zh/function.fsockopen.php
 页面部分缓存，将一个页面中不经常变的部分进行静态缓存，而经常变化的块不缓存，最后组装在一起显示
 数据缓存，通过一个id进行请求的数据,将数据缓存到一个php文件中,id和文件是对应的,下次通过这个id进行请求时 直接读php文件
 
+## 单例
+https://www.cnblogs.com/sgm4231/p/9851725.html
+二、PHP单例模式三要素
+1. 需要一个保存类的唯一实例的静态成员变量。
+2. 构造函数和克隆函数必须声明为私有的，防止外部程序创建或复制实例副本。
+3. 必须提供一个访问这个实例的公共静态方法，从而返回唯一实例的一个引用。
+```php
+private static $instance = null;
+//保存用户的自定义配置参数
+private $setting = [];
+//构造器私有化:禁止从类外部实例化
+private function __construct(){}
+//克隆方法私有化:禁止从外部克隆对象
+private function __clone(){}
+        //因为用静态属性返回类实例,而只能在静态方法使用静态属性
+        //所以必须创建一个静态方法来生成当前类的唯一实例
+public static function getInstance()
+{
+            //检测当前类属性$instance是否已经保存了当前类的实例
+            if (self::$instance == null) {
+                //如果没有,则创建当前类的实例
+                self::$instance = new self();
+            }
+            //如果已经有了当前类实例,就直接返回,不要重复创建类实例
+            return self::$instance;
+}
+//假如是数据库，初始化有动作，在构造函数内实例
+```
