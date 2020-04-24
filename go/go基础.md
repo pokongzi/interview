@@ -222,7 +222,7 @@ a = append(a[:i], a[i+N:]...) // 删除中间N个元素
 a = a[:i+copy(a[i:], a[i+1:])] // 删除中间1个元素
 a = a[:i+copy(a[i:], a[i+N:])] // 删除中间N个元素
 
-## sync.map
+## map
 初始化
 方式1
  var mapLit map[string]int

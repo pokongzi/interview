@@ -16,3 +16,8 @@ $dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass, array(
 2. 开启持久连接之后，数据库连接是被缓存于fpm进程之中的。如果某个fpm-worker进程中已经缓存了持久连接，此时可能出现如下两种情况：
 当脚本中再次执行带 ATTR_PERSISTENT 参数的pdo连接时，会复用之前的连接，而不会产生新的连接。
 当脚本中再次执行不带 ATTR_PERSISTENT 参数的pdo连接时，还会再次产生一个新的数据库连接。
+
+## sharding
+https://www.cnblogs.com/f-ck-need-u/p/9388407.html
+
+分库--》垂直拆分--》水平拆分--》分区-》扩容

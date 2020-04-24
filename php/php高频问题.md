@@ -436,3 +436,40 @@ public static function getInstance()
 }
 //假如是数据库，初始化有动作，在构造函数内实例
 ```
+
+## php与redis连接
+https://www.cnblogs.com/JohnABC/p/6012112.html
+
+## GC
+在php中，每个变量存在一个叫“zval”的变量容器中。一个zval变量容器，除了包含变量的类型和值，还包括另外两个字节的额外信息。第一个是"is_ref"。第二个是"refcount"。
+
+is_ref是一个布尔类型的值，用来标示这个变量是否属于引用集合。通过这个字节，php引擎才能把普通变量和引用变量区分开来，由于php允许用户通过"&"来使用自定义的引用，所以zval中还有一个内部引用计数机制，来进行优化内存。
+
+refcount用来表示这个zval变量容器的变量的个数。所有符号存在一个符号表当中，每个符号都有作用域。
+
+通俗的讲：
+
+refcount就是多少个变量是一样的用了相同的值，那么refcount就是这个值
+is_ref就是当有变量用了&的形式进行赋值，那么is_ref的值就会增加
+
+## 编译缓存
+Nginx接收客户端的PHP程序访问请求
+Nginx根据扩展名等过滤规则将PHP程序请求传递给解析PHP的FCGI（PHP FPM）进程
+PHP FPM进程调用PHP解析器读取站点磁盘上的PHP文件，并加载到内存中
+PHP解析器将PHP程序编译成为opcode文件，然后把opcode缓存起来
+PHP FPM引擎执行opcode树后，返回数据给Nginx，进而返回客户端
+Nginx接收客户新的PHP程序请求，PHP FPM引擎就会直接读取缓存中的opcode并执行，将结果返回
+
+## 浏览器缓存
+https://segmentfault.com/a/1190000017962411
+### 强缓存
+浏览器在加载资源时，会先根据本地缓存资源的 header 中的信息判断是否命中强缓存，如果命中则直接使用缓存中的资源不会再向服务器发送请求。
+> 这里的 header 中的信息指的是 expires 和 cahe-control.
+
+### 协商缓存
+
+## XHProf
+和goprofile类似，是一个扩展
+引入配置后，可以生成性能图直观查看
+https://segmentfault.com/a/1190000018856380
+
