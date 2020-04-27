@@ -473,3 +473,16 @@ https://segmentfault.com/a/1190000017962411
 引入配置后，可以生成性能图直观查看
 https://segmentfault.com/a/1190000018856380
 
+## array_merge() + array_merge_recursive
+array_merge()不会覆盖掉原来的值
++ 把最先出现的值作为最终结果返回，而把后面的数组拥有相同键名的那些值“抛弃”掉
+
+## php执行过程的顺序正确的是？
+扫描->解析->编译->执行->输出
+ 1.扫描(scanning) ,将index.php内容变成一个个语言片段(token) 2.解析(parsing) , 将一个个语言片段变成有意义的表达式 3.编译(complication),将表达式编译成中间码(opcode) 4.执行(execution),将中间码一条一条的执行 5.输出(output buffer),将要输出的内容输出到缓冲区
+
+ ## fpm
+ https://www.cnblogs.com/lalalagq/p/9980006.html
+
+
+

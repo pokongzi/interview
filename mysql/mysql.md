@@ -1,5 +1,8 @@
 # mysql
 
+## 优化
+> https://www.cnblogs.com/yuyangphpweibo/p/9044374.html
+
 ## php 之pdo
 ```
 <?php
@@ -21,3 +24,4 @@ $dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass, array(
 https://www.cnblogs.com/f-ck-need-u/p/9388407.html
 
 分库--》垂直拆分--》水平拆分--》分区-》扩容
+
