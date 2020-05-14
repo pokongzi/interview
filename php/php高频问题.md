@@ -484,5 +484,22 @@ array_merge()不会覆盖掉原来的值
  ## fpm
  https://www.cnblogs.com/lalalagq/p/9980006.html
 
+ ## PHP扩展文件安装过程？
+phpize安装
+//下载libevent扩展文件压缩包（在当前系统哪个目录下载随意）
+~# wget http://pecl.php.net/get/libevent-0.1.0.tgz
+//解压文件
+~# tar -zxvf libevent-0.1.0.tgz
+//进入源码目录
+~# cd libevent-0.1.0/
+如 /usr/local/php7/bin/phpize //运行phpize命令，写全phpize的路径
+~# ./configure --with-php-config=/usr/local/php/bin/php-config
+//运行configure命令，配置时 要将php-config的路径附上
+~# make
+~# make test
+~# sudo make install
+//修改php.ini，结尾加入：extension=libevent.so
+//重启对应的php-fpm
+
 
 
